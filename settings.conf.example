@@ -1,4 +1,4 @@
 # copy file to settings.conf and adjust your settings 
 [ENV]
-WIFI_SSID=\"my\ SSID\"
-WIFI_PASS=\"my\ password\"
+WIFI_SSID=\"my SSID\"
+WIFI_PASS=\"my password\"
