@@ -42,7 +42,7 @@ void setup() {
         json["ip"] = WiFi.localIP().toString();
         json["humidity"] = humidity;
         json["temperature"] = temperature;
-        serializeJson(json, *response);
+        serializeJsonPretty(json, *response);
         request->send(response);
     });
 
