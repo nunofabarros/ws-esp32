@@ -6,7 +6,7 @@
 #include <ArduinoJson.h>
 #include <LiquidCrystal.h>
 #include <DHT.h>
-
+#include <ESPmDNS.h>
 #include "common.h"
 
 const char* ssid = WIFI_SSID;
@@ -34,6 +34,14 @@ void setup() {
     dht.begin();
     WiFi.mode(WIFI_STA);
     WiFi.setHostname("ws-esp");
+    
+    if(!MDNS.begin("ws-esp")) {
+      Serial.printf("Error starting mDNS\n");
+    } else {
+      if (MDNS.addService("ws-station","tcp",80)) {
+        Serial.printf("mDNS service ws-station started\n");
+      }
+    }
     
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
         AsyncResponseStream *response = request->beginResponseStream("application/json");
