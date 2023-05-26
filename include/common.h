@@ -4,7 +4,7 @@
 #define BAUD_RATE 115200
 #define JSON_BUFFER 1024
 
-// Wifi Settings can be overwiriten by enviornment variables with the same name
+// Wi-Fi Settings can be overwritten by environment variables with the same name
 
 #ifndef WIFI_SSID
 #define WIFI_SSID "MY SSID"
@@ -17,11 +17,11 @@
 #define WIFI_CHECK_INTERVAL 100
 #define WIFI_MAX_ATTEMPTS 50
 
-// Webserver settings
+// Web server settings
 
 #define HTTP_PORT 80
 
-// LCD Settings 
+// LCD Settings
 
 #define LCD_RST 19
 #define LCD_EN 23

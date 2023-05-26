@@ -78,7 +78,7 @@ void loop() {
     if (connection_attempts > WIFI_MAX_ATTEMPTS) {
         Serial.printf("Wifi connection to SSID: %s failed\n", ssid);
         Serial.printf("Reseting WS-ESP");
-        lcd.print("Resetinng WS-ESP");
+        lcd.print("Reseting WS-ESP");
         ESP.restart();
     }
     lcd.print("Connecting...");
