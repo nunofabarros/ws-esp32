@@ -4,7 +4,10 @@
 #define BAUD_RATE 115200
 #define JSON_BUFFER 1024
 
-// Wi-Fi Settings can be overwritten by environment variables with the same name
+#define UPDATE_INTERVAL 2000
+
+// Wi-Fi Settings 
+// SSID and password should be define on settings.conf file see settings.conf.example
 
 #ifndef WIFI_SSID
 #define WIFI_SSID "MY SSID"
@@ -14,7 +17,6 @@
 #define WIFI_PASS "my password"
 #endif
 
-#define WIFI_CHECK_INTERVAL 100
 #define WIFI_MAX_ATTEMPTS 50
 
 // Web server settings
@@ -34,5 +36,7 @@
 
 #define SENSOR_PIN 27
 #define SENSOR_TYPE DHT22
+#define SENSOR_TEMPERATURE_OFFSET 0.0f
+#define SENSOR_HUMIDITY_OFFSET 0.0f
 
 #endif

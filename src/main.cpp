@@ -12,14 +12,9 @@
 const char* ssid = WIFI_SSID;
 const char* password = WIFI_PASS;
 
-const int count_interval = 2000;
-
 AsyncWebServer server(HTTP_PORT);
 LiquidCrystal lcd = LiquidCrystal(LCD_RST, LCD_EN, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 DHT dht(SENSOR_PIN, SENSOR_TYPE);
-
-// Please change this value to get more precise temperature
-const float temperature_calibration = 0.0f;
 
 static float humidity = MAXFLOAT;
 static float temperature = MAXFLOAT;
@@ -65,8 +60,8 @@ int connection_attempts = 0;
 void loop() {
     lcd.clear();
     lcd.setCursor(0,0);
-    humidity = dht.readHumidity();
-    temperature = dht.readTemperature() + temperature_calibration;
+    humidity = dht.readHumidity() + SENSOR_HUMIDITY_OFFSET;
+    temperature = dht.readTemperature() + SENSOR_TEMPERATURE_OFFSET;
 
   if (isnan(humidity) || isnan(temperature)) {
     Serial.print("Failed to read DHT sensor!");
@@ -91,6 +86,6 @@ void loop() {
 
   lcd.setCursor(0,1);
   lcd.printf("%.1fC %.1f%% Hum.",temperature, humidity);
-  delay(count_interval);
+  delay(UPDATE_INTERVAL);
     
 }
