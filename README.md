@@ -2,5 +2,6 @@
 
 Platform IO project to create a weather station with DHT sensor and webserver
 
-## Environment variables
+## Settings
 
+Copy file settings.conf.example to settings.conf and modify to reflect your settings
