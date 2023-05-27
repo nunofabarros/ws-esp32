@@ -81,6 +81,7 @@ void loop() {
     Serial.printf("WiFi MAC: %s\n", WiFi.macAddress().c_str());
     WiFi.begin(ssid, password);
   } else {
+    connection_attempts = 0;
     lcd.printf("IP:%s",WiFi.localIP().toString().c_str());
   }
 
