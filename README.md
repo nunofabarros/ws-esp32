@@ -1,6 +1,6 @@
 # Weather Station ESP32
 
-Platform IO project to create a weather station with ESP32, DHT sensor, LCD 16x2.
+Simple PlatformIO project to create a weather station with ESP32, DHT sensor, LCD 16x2.
 Connects over Wi-Fi and with simple web server for querying temperature and humidity data.
 
 ![](doc/esp_32.jpg)
@@ -10,13 +10,13 @@ Connects over Wi-Fi and with simple web server for querying temperature and humi
 - ESP32 DEV Kit Board (AZDelivery ESP-WROOM-32)
 - DHT22 (AM2302) Temperature and Humidity Sensor
 - LCD 16x2 (LCM1602C)
-- 10K Potentiometer to adjust LCD contrast
-- 220 resistor
-- 10K resistor
+- 10K&#x2126; Potentiometer to adjust LCD contrast
+- 220&#x2126; Resistor
+- 10K&#x2126; Resistor
 
 ## Schematic
 
-
+![](doc/ws-esp32-circuit.jpg)
 
 ## Build
 
