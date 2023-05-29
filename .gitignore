@@ -29,7 +29,7 @@
 .pio
 
 ### Custom ### 
-
+.idea/
 private/
 tmp/
 settings.conf
